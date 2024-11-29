@@ -4,6 +4,7 @@ import GlobalStyles from '@mui/joy/GlobalStyles';
 import CssBaseline from '@mui/joy/CssBaseline';
 import Box from '@mui/joy/Box';
 import Button from '@mui/joy/Button';
+import { useNavigate } from 'react-router-dom';
 import Checkbox from '@mui/joy/Checkbox';
 import Divider from '@mui/joy/Divider';
 import FormControl from '@mui/joy/FormControl';
@@ -53,29 +54,53 @@ function ColorSchemeToggle(props: IconButtonProps) {
   );
 }
 
-async function fetchData(email: string , password : string){
-  let {data,error} = await supabase.auth.signInWithPassword({
+async function fetchData(email: string, password: string): Promise<boolean> {
+  const { data, error } = await supabase.auth.signInWithPassword({
     email: email,
-    password: password
-  })
-  if (error) console.error(error);
-  else console.log(data);
+    password: password,
+  });
+
+  if (error) {
+    console.error('Login failed:', error);
+    return false;
+  } else {
+    console.log('Login successful:', data);
+    return true;
+  }
 }
-
-// async function fetchData() {
-//   const { data, error } = await supabase
-//     .from('users')
-//     .select('*');
-
-//   if (error) console.error(error);
-//   else console.log(data);
-// }
-
-//fetchData();
 
 const customTheme = extendTheme();
 
-export default function SignInSide() {
+const SignInForm: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    // Extract form data
+    const formElements = event.currentTarget.elements as typeof event.currentTarget.elements & {
+      email: HTMLInputElement;
+      password: HTMLInputElement;
+      persistent: HTMLInputElement;
+    };
+
+    const data = {
+      email: formElements.email.value,
+      password: formElements.password.value,
+      persistent: formElements.persistent.checked,
+    };
+
+    // Attempt to log in
+    const loggedIn = await fetchData(data.email, data.password);
+
+    // Navigate or handle failure
+    if (loggedIn) {
+      navigate('/'); // Navigate on successful login
+    } else {
+      console.log('Login failed');
+    }
+  };
+
   return (
     <CssVarsProvider theme={customTheme} disableTransitionOnChange>
       <CssBaseline />
@@ -116,7 +141,7 @@ export default function SignInSide() {
             component="header"
             sx={{ py: 3, display: 'flex', justifyContent: 'space-between' }}
           >
-          <ColorSchemeToggle />
+            <ColorSchemeToggle />
           </Box>
           <Box
             component="main"
@@ -155,18 +180,7 @@ export default function SignInSide() {
               </Stack>
             </Stack>
             <Stack sx={{ gap: 4, mt: 2 }}>
-              <form
-                onSubmit={(event: React.FormEvent<SignInFormElement>) => {
-                  event.preventDefault();
-                  const formElements = event.currentTarget.elements;
-                  const data = {
-                    email: formElements.email.value,
-                    password: formElements.password.value,
-                    persistent: formElements.persistent.checked,
-                  };
-                  fetchData(data.email, data.password);
-                }}
-              >
+              <form onSubmit={handleSubmit}>
                 <FormControl required>
                   <FormLabel>Email</FormLabel>
                   <Input type="email" name="email" />
@@ -225,3 +239,4 @@ export default function SignInSide() {
     </CssVarsProvider>
   );
 }
+export default SignInForm
