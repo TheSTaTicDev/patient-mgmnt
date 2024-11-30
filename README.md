@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="[https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=3000&pause=1000&color=F7F7F7&center=true&vCenter=true&width=600&lines=Smart+Virtual+Health+Solutions;Patient+Care+Made+Simple;Find+Emergency+Help+Fast;Connect+with+Doctors+24%2F7](https://cdn.vectorstock.com/i/500p/14/36/plus-and-cross-neon-sign-medical-pharmacy-vector-46551436.jpg)" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=30&duration=3000&pause=1000&color=F7F7F7&center=true&vCenter=true&width=600&lines=Smart+Virtual+Health+Solutions;Patient+Care+Made+Simple;Find+Emergency+Help+Fast;Connect+with+Doctors+24%2F7" alt="Typing SVG" />
   <p>
     <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
     <img src="https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge" />
@@ -8,7 +8,7 @@
 </div>
 
 <p align="center">
-  <img src="https://socialify.git.ci/yourusername/smart-virtual-health/image?description=1&font=Source%20Code%20Pro&forks=1&issues=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark" alt="project-image" width="750">
+  <img src=https://cdn.vectorstock.com/i/500p/14/36/plus-and-cross-neon-sign-medical-pharmacy-vector-46551436.jpg" alt="project-image" width="750">
 </p>
 
 <p align="center">
