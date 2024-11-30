@@ -208,7 +208,7 @@ export default function Sidebar() {
         >
           <ListItem>
             <ListItemButton onClick={() => {
-              navigate('/');
+              navigate('/main');
             }}>
               <HomeRoundedIcon />
               <ListItemContent>
@@ -249,11 +249,14 @@ export default function Sidebar() {
               </ListItemContent>
             </ListItemButton>
           </ListItem>
-          
+
           <ListItem>
             <ListItemButton
               role="menuitem"
               component="a"
+              onClick={() => {
+                window.location.href = "/src/Chat/index.html";
+              }}
             >
               <QuestionAnswerRoundedIcon />
               <ListItemContent>
@@ -282,7 +285,7 @@ export default function Sidebar() {
                 <ListItem sx={{ mt: 0.5 }}>
                   <ListItemButton onClick={() => {
                     navigate('/profile');
-                  }} selected>My Profile</ListItemButton>
+                  }}>My Profile</ListItemButton>
                 </ListItem>
               </List>
             </Toggler>

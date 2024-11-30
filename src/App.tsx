@@ -5,6 +5,7 @@ import SignIn from './Sign-in/Sign-in';
 import Profile from './Profile/Profile';
 import Home from './Home/App';
 import Appointment from './Appointment/App';
+import Main from './Main/PatientQRCodePage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/appointment" element={<Appointment />} />
+            <Route path="/main" element={<Main />} />
           </Routes>
         </main>
       </div>
