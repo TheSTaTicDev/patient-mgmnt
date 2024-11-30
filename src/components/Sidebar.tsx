@@ -74,6 +74,12 @@ function Toggler({
 export default function Sidebar() {
   const navigate = useNavigate();
 
+  async function handleLogOut() {
+    let { error } = await supabase.auth.signOut()
+    if (error) console.log("Error Logging out!");
+    else navigate('/sign-in');
+  }
+
   const fetchAllUsers = async () => {
     const { data, error } = await supabase.from('users').select('*');
 
@@ -201,7 +207,9 @@ export default function Sidebar() {
           }}
         >
           <ListItem>
-            <ListItemButton>
+            <ListItemButton onClick={() => {
+              navigate('/');
+            }}>
               <HomeRoundedIcon />
               <ListItemContent>
                 <Typography level="title-sm">Home</Typography>
@@ -210,7 +218,9 @@ export default function Sidebar() {
           </ListItem>
 
           <ListItem>
-            <ListItemButton>
+            <ListItemButton onClick={() => {
+              navigate('/appointment');
+            }}>
               <DashboardRoundedIcon />
               <ListItemContent>
                 <Typography level="title-sm">Book Appointment</Typography>
@@ -229,38 +239,17 @@ export default function Sidebar() {
             </ListItemButton>
           </ListItem>
 
-          <ListItem nested>
-            <Toggler
-              renderToggle={({ open, setOpen }) => (
-                <ListItemButton onClick={() => setOpen(!open)}>
-                  <AssignmentRoundedIcon />
-                  <ListItemContent>
-                    <Typography level="title-sm">Appointments</Typography>
-                  </ListItemContent>
-                  <KeyboardArrowDownIcon
-                    sx={[
-                      open ? { transform: 'rotate(180deg)' } : { transform: 'none' },
-                    ]}
-                  />
-                </ListItemButton>
-              )}
-            >
-              <List sx={{ gap: 0.5 }}>
-                <ListItem sx={{ mt: 0.5 }}>
-                  <ListItemButton>All</ListItemButton>
-                </ListItem>
-                <ListItem>
-                  <ListItemButton>Pending</ListItemButton>
-                </ListItem>
-                <ListItem>
-                  <ListItemButton>Submitted</ListItemButton>
-                </ListItem>
-                <ListItem>
-                  <ListItemButton>History</ListItemButton>
-                </ListItem>
-              </List>
-            </Toggler>
+          <ListItem>
+            <ListItemButton onClick={() => {
+              window.location.href = "/src/Navigation/index.html";
+            }}>
+              <AssignmentRoundedIcon />
+              <ListItemContent>
+                <Typography level="title-sm">Appointments</Typography>
+              </ListItemContent>
+            </ListItemButton>
           </ListItem>
+          
           <ListItem>
             <ListItemButton
               role="menuitem"
@@ -291,7 +280,9 @@ export default function Sidebar() {
             >
               <List sx={{ gap: 0.5 }}>
                 <ListItem sx={{ mt: 0.5 }}>
-                  <ListItemButton selected>My Profile</ListItemButton>
+                  <ListItemButton onClick={() => {
+                    navigate('/profile');
+                  }} selected>My Profile</ListItemButton>
                 </ListItem>
               </List>
             </Toggler>
@@ -325,7 +316,9 @@ export default function Sidebar() {
           <Typography level="title-sm">{user.name}</Typography>
           <Typography level="body-xs">{user.email}</Typography>
         </Box>
-        <IconButton size="sm" variant="plain" color="neutral">
+        <IconButton onClick={() => {
+          handleLogOut();
+        }} size="sm" variant="plain" color="neutral">
           <LogoutRoundedIcon />
         </IconButton>
       </Box>

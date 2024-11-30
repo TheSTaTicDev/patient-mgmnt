@@ -5,8 +5,10 @@ import Link from '@mui/joy/Link';
 import Typography from '@mui/joy/Typography';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import TwoSidedLayout from './components/TwoSidedLayout';
+import {useNavigate} from 'react-router-dom';
 
 export default function HeroLeft01() {
+  const navigate = useNavigate();
   return (
     <TwoSidedLayout>
       <Typography color="primary" sx={{ fontSize: 'lg', fontWeight: 'lg' }}>
@@ -30,7 +32,9 @@ export default function HeroLeft01() {
       >
         A one stop solution for all your needs
       </Typography>
-      <Button size="lg">
+      <Button onClick={() =>{
+        navigate('/sign-in');
+      }} size="lg">
         Sign In
       </Button>
       <Typography>
