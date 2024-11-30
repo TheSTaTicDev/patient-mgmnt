@@ -77,7 +77,6 @@ const SignInForm: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Extract form data
     const formElements = event.currentTarget.elements as typeof event.currentTarget.elements & {
       email: HTMLInputElement;
       password: HTMLInputElement;
@@ -90,12 +89,9 @@ const SignInForm: React.FC = () => {
       persistent: formElements.persistent.checked,
     };
 
-    // Attempt to log in
     const loggedIn = await fetchData(data.email, data.password);
-
-    // Navigate or handle failure
     if (loggedIn) {
-      navigate('/'); // Navigate on successful login
+      navigate('/profile');
     } else {
       console.log('Login failed');
     }
