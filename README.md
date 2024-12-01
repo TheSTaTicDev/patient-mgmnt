@@ -16,7 +16,7 @@
 
 <div align="center">
   
-  [Live Demo](https://your-demo-link.com) · [Report Bug](https://github.com/yourusername/smart-virtual-health/issues) · [Request Feature](https://github.com/yourusername/smart-virtual-health/issues)
+  [Report Bug](https://github.com/TheSTaTicDev/patient-mgmntissues) · [Request Feature](https://github.com/TheSTaTicDev/patient-mgmnt/issues)
   
 </div>
 
