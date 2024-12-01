@@ -16,7 +16,7 @@
 
 <div align="center">
   
-  [Report Bug](https://github.com/TheSTaTicDev/patient-mgmntissues) · [Request Feature](https://github.com/TheSTaTicDev/patient-mgmnt/issues)
+  [Report Bug](https://github.com/TheSTaTicDev/patient-mgmnt/issues) · [Request Feature](https://github.com/TheSTaTicDev/patient-mgmnt/issues)
   
 </div>
 
@@ -82,16 +82,16 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/smart-virtual-health.git
+git clone https://github.com/TheSTaTicDev/patient-mgmnt.git
 
 # Navigate to project directory
-cd smart-virtual-health
+cd patient-mgmnt
 
 # Install dependencies
 npm install
 
 # Start the application
-npm start
+npm run dev
 ```
 
 ## 🛠️ Tech Stack
@@ -99,7 +99,6 @@ npm start
 <p align="center">
   <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
   <img src="https://img.shields.io/badge/material--ui-%230081CB.svg?style=for-the-badge&logo=material-ui&logoColor=white" />
-  <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" />
   <img src="https://img.shields.io/badge/TomTom-3E3E3E?style=for-the-badge&logo=tomtom&logoColor=white" />
 </p>
 
