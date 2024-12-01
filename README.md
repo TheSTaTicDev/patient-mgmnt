@@ -114,54 +114,7 @@ npm start
 
 </div>
 
-## 🔄 Project Structure
-
-```
-smart-virtual-health/
-├── src/
-│   ├── components/
-│   │   ├── PatientProfile/
-│   │   ├── EmergencyLocator/
-│   │   └── common/
-│   ├── pages/
-│   ├── services/
-│   └── utils/
-├── public/
-└── docs/
-```
-
-## 🤝 Contributing
-
-<img src="https://contrib.rocks/image?repo=yourusername/smart-virtual-health" />
-
-<details>
-<summary>How to Contribute</summary>
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-</details>
-
-## 👥 Authors
-
 <table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/yourusername">
-        <img src="https://github.com/yourusername.png" width="100px;" alt="Author"/>
-        <br />
-        <sub><b>Your Name</b></sub>
-      </a>
-    </td>
-  </tr>
-</table>
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
 <div align="center">
 
 ### ⭐️ Star us and save lives!
