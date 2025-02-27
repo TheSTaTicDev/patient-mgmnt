@@ -7,10 +7,6 @@
 </div>
 
 <p align="center">
-  <img src=https://cdn.vectorstock.com/i/500p/14/36/plus-and-cross-neon-sign-medical-pharmacy-vector-46551436.jpg" alt="project-image" width="750">
-</p>
-
-<p align="center">
   A comprehensive healthcare solution combining patient management and emergency services locator in one powerful platform.
 </p>
 
