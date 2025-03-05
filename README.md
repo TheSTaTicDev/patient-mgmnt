@@ -6,9 +6,6 @@
   </p>
 </div>
 
-<p align="center">
-  A comprehensive healthcare solution combining patient management and emergency services locator in one powerful platform.
-</p>
 
 <div align="center">
   
